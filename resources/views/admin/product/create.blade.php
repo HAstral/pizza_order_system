@@ -83,7 +83,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label mb-1">Image</label>
-                                            <input type="file" name="pizzaImage" class="form-control @error('pizzaImage') is-invalid @enderror">
+                                            <input type="file" name="pizzaImage" multiple class="form-control @error('pizzaImage') is-invalid @enderror">
                                             @error('pizzaImage')
                                             <div class="invalid-feedback">
                                                 {{$message}}

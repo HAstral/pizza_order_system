@@ -68,9 +68,12 @@ class ProductController extends Controller
         $this->productValidationCheck($request,"create");
         $data=$this->requestProductInfo($request);
         if($request->hasFile('pizzaImage')){
+
+
             $fileName = uniqid().$request->file('pizzaImage')->getClientOriginalName();
             $request->file('pizzaImage')->storeAs('public',$fileName);
             $data['image']=$fileName;
+           
         }
         // dd($data)->all();
         Product::create($data);
